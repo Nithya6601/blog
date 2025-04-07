@@ -1,0 +1,15 @@
+<div class="blog-edit-wrapper">
+  <div class="blog-edit-container">
+    <h2>Edit Blog</h2>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <form (ngSubmit)="onSubmit()">
+      <label>Title</label>
+      <input type="text" [(ngModel)]="blogData.title" name="title" required />
+      
+      <label>Content</label>
+      <textarea [(ngModel)]="blogData.content" name="content" rows="6" required></textarea>
+      
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>

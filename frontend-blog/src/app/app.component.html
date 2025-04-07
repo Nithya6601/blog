@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">BlogNest</a>
+  </div>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/signup">Signup</a></li>
+    <li *ngIf="isLoggedIn"><a routerLink="/my-blogs">My Blogs</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="landing-content" *ngIf="isHomePage">
+  <h1>Welcome to BlogNest</h1>
+  <p>Your place to write, read, and explore blogs.</p>
+  <div class="cta-buttons" *ngIf="!isLoggedIn">
+    <a routerLink="/login" class="btn">Login</a>
+    <a routerLink="/signup" class="btn outline">Signup</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

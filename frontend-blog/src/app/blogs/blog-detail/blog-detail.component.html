@@ -1,0 +1,23 @@
+<div class="blog-detail-wrapper">
+  <div class="blog-detail-container" *ngIf="blog">
+    <h2>{{ blog.title }}</h2>
+    <p><strong>Author:</strong> {{ blog.author }}</p>
+    <p><strong>Created:</strong> {{ blog.created_at | date:'medium' }}</p>
+    <p><strong>Last Updated:</strong> {{ blog.updated_at | date:'medium' }}</p>
+    <div class="content">
+      <p>{{ blog.content }}</p>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <button routerLink="/my-blogs" *ngIf="isOwner" class="back-btn">Back to My Blogs</button>
+        <button routerLink="/" *ngIf="!isOwner" class="back-btn">Back to Blog List</button>
+    </div>
+  
+    <div *ngIf="isOwner" class="owner-actions">
+      <button routerLink="/edit/{{ blog.id }}" class="edit-btn">Edit</button>
+      <button (click)="deleteBlog()" class="delete-btn">Delete</button>
+    </div>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

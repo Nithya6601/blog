@@ -1,0 +1,20 @@
+# Python
+pycache/
+*.pyc
+env/
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+
+# Angular
+frontend-blog/.angular/cache/
+frontend-blog/.angular/config.json
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

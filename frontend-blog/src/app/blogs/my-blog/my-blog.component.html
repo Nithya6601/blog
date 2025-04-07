@@ -1,0 +1,20 @@
+<div class="my-blogs-container">
+  <h2>My Blogs</h2>
+
+  <button class="add-button" routerLink="/create">+ Add Blog</button>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div class="blog-grid">
+    <div class="blog-card" *ngFor="let blog of blogs">
+      <h3>{{ blog.title }}</h3>
+      <p>{{ blog.content | slice:0:100 }}...</p>
+      <p>Created At: {{ blog.created_at | date:'medium' }}</p>
+      <p>Updated At: {{ blog.updated_at | date:'medium' }}</p>
+
+      <button class="edit-btn" [routerLink]="['/edit', blog.id]">Edit</button>
+      <button class="delete-btn" (click)="deleteBlog(blog.id)">Delete</button>
+      <button routerLink="/" class="back-btn">Back to Blog List</button>
+    </div>
+  </div>
+</div>
