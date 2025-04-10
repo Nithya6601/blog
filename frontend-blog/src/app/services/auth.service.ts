@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 
@@ -16,13 +16,17 @@ export class AuthService {
     .pipe(
       tap(response => {
         localStorage.setItem('token', response.auth_token);
-        localStorage.setItem('username', data.username)
+        localStorage.setItem('username', data.username);
       })
     );
   }
 
   getCurrentUser() {
-    return this.http.get<any>(`${this.baseUrl}/users/me`);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Token ${token}`
+    });
+    return this.http.get<any>(`${this.baseUrl}/users/me`, { headers});
   }
   
   signup(data: any) {
@@ -31,6 +35,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
 
