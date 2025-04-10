@@ -12,6 +12,10 @@ dist/
 frontend-blog/.angular/cache/
 frontend-blog/.angular/config.json
 
+# Angular build output
+/project_blog/static/
+/project_blog/staticfiles/
+
 # VSCode
 .vscode/
 
