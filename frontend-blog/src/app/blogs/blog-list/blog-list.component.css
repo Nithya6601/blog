@@ -23,8 +23,9 @@
 }
 
 .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
@@ -34,7 +35,9 @@
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 500px;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
 }
 
 .blog-card:hover {
@@ -99,5 +102,26 @@
 
   .read-more-btn {
     width: 100%;
+  }
+
+  .blog-card {
+    padding: 1.2rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .blog-card p {
+    font-size: 0.95rem;
+  }
+
+  .pagination span {
+    font-size: 0.9rem;
+  }
+
+  .pagination button {
+    padding: 6px 12px;
+    font-size: 0.95rem;
   }
 }

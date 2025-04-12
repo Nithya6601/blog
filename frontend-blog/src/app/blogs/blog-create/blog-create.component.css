@@ -5,6 +5,7 @@
   align-items: center;
   background: linear-gradient(to right, #e3f2fd, #bbdefb);
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .blog-create-container {
@@ -12,8 +13,9 @@
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  max-width: 700px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .blog-create-container h2 {
@@ -23,11 +25,16 @@
   font-size: 1.8rem;
 }
 
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
 .blog-create-container label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: #555;
+  font-size: 1rem;
 }
 
 .blog-create-container input,
@@ -39,6 +46,7 @@
   border: 1px solid #ccc;
   margin-bottom: 1rem;
   transition: border-color 0.3s;
+  box-sizing: border-box;
 }
 
 .blog-create-container input:focus,
@@ -57,6 +65,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
 button:hover:not(:disabled) {
@@ -88,9 +97,18 @@ button:disabled {
   .blog-create-container input,
   .blog-create-container textarea {
     font-size: 0.95rem;
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .blog-create-container label {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
   }
 
   button {
     font-size: 0.95rem;
+    padding: 0.65rem;
   }
 }
