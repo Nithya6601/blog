@@ -7,17 +7,16 @@ import { BlogDetailComponent } from './blogs/blog-detail/blog-detail.component';
 import { BlogCreateComponent } from './blogs/blog-create/blog-create.component';
 import { BlogEditComponent } from './blogs/blog-edit/blog-edit.component';
 import { MyBlogComponent } from './blogs/my-blog/my-blog.component';
-import { authGuard } from './guards/auth.guard';
-// import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: BlogListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'blog/:id', component: BlogDetailComponent },
-  { path: 'create', component: BlogCreateComponent },
-  { path: 'edit/:id', component: BlogEditComponent },
-  { path: 'my-blogs', component: MyBlogComponent },
+  { path: 'create', component: BlogCreateComponent, canActivate: [AuthGuard] },
+  { path: 'edit/:id', component: BlogEditComponent, canActivate: [AuthGuard] },
+  { path: 'my-blogs', component: MyBlogComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
