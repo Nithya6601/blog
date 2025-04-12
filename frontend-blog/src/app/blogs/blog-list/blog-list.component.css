@@ -100,11 +100,14 @@
     padding: 1rem;
   }
 
-  .read-more-btn {
-    width: 100%;
+  .blog-grid {
+    flex-direction: column;
+    align-items: center;
   }
 
   .blog-card {
+    width: 90%;
+    max-width: 90%;
     padding: 1.2rem;
   }
 
@@ -114,6 +117,15 @@
 
   .blog-card p {
     font-size: 0.95rem;
+  }
+
+  .read-more-btn {
+    width: 100%;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .pagination span {
