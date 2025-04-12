@@ -57,7 +57,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
     "http://34.234.76.216",
+    "http://34.234.76.216:80",
     "http://34.234.76.216:8000",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
@@ -75,6 +77,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':[
     'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
 }
 
 DJOSER = {
