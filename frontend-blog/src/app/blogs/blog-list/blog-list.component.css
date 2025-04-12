@@ -164,3 +164,40 @@
     font-size: 0.9rem;
   }
 }
+
+@media (max-width: 400px) {
+  .blog-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1rem;
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+  }
+
+  .read-more-btn {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pagination button {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    width: 100%;
+  }
+}
