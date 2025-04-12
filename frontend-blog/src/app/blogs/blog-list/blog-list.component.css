@@ -94,20 +94,17 @@
   cursor: not-allowed;
 }
 
-/* Responsive for small screens */
+/* Responsive for tablets and small screens */
 @media (max-width: 768px) {
   .blog-list-container {
     padding: 1rem;
   }
 
-  .blog-grid {
-    flex-direction: column;
-    align-items: center;
+  .read-more-btn {
+    width: 100%;
   }
 
   .blog-card {
-    width: 90%;
-    max-width: 90%;
     padding: 1.2rem;
   }
 
@@ -117,15 +114,6 @@
 
   .blog-card p {
     font-size: 0.95rem;
-  }
-
-  .read-more-btn {
-    width: 100%;
-  }
-
-  .pagination {
-    flex-direction: column;
-    gap: 10px;
   }
 
   .pagination span {
@@ -138,43 +126,17 @@
   }
 }
 
-/* Additional support for extra-small screens */
-@media (max-width: 545px) {
-  .blog-card {
-    width: 95%;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .blog-card h3 {
-    font-size: 1rem;
-  }
-
-  .blog-card p {
-    font-size: 0.85rem;
-  }
-
-  .read-more-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .pagination button {
-    padding: 5px 10px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .blog-grid {
-    flex-direction: column;
-    align-items: center;
+/* Ultra-mobile (e.g. 500px and below ) */
+@media (max-width: 540px) {
+  .blog-list-container {
+    padding: 0.8rem;
   }
 
   .blog-card {
     width: 100%;
     padding: 1rem;
-    font-size: 0.85rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .blog-card h3 {
@@ -182,22 +144,23 @@
   }
 
   .blog-card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .read-more-btn {
-    padding: 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .pagination {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .pagination button {
-    font-size: 0.85rem;
-    padding: 5px 10px;
     width: 100%;
+    font-size: 0.85rem;
   }
 }
