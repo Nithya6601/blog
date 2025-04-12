@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8000/auth';
+  private baseUrl = `${environment.apiUrl.replace('/api', '')}/auth`;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -17,6 +18,7 @@ export class AuthService {
       tap(response => {
         localStorage.setItem('token', response.auth_token);
         localStorage.setItem('username', data.username);
+        console.log('Token saved to localStorage: ', response.auth_token);
       })
     );
   }
