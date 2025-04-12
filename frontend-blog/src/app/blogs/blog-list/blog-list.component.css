@@ -137,3 +137,30 @@
     font-size: 0.95rem;
   }
 }
+
+/* Additional support for extra-small screens */
+@media (max-width: 545px) {
+  .blog-card {
+    width: 95%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1rem;
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+  }
+
+  .read-more-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .pagination button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}
